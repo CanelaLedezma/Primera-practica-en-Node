@@ -2,7 +2,7 @@
 import { URL } from 'url';
 import {sumar, alCuadrado, calcularAreaCirculo, calcularPerimetroCirculo} from "./modules/matematica.js";
 import {Cane} from "./modules/Alumno.js";
-
+import fs from 'fs';
 //EJ 01//
 
 let palabra1 = 'auto';
@@ -36,7 +36,19 @@ console.log(`
     Username: ${Cane.username}, 
     DNI: ${Cane.dni}`);
 
+//EJ 04//
+
+
+fs.copyFile('archivo.txt', 'nuevoArchivo.txt', (err) => {
+  if (err) {
+    console.log('El archivo no se pudo copiar:', err.message);
+  } else {
+    console.log('El archivo se copió exitosamente.');
+  }
+});
+
 //EJ05//
+
 
 const parsearUrl = (url) =>
 {
@@ -56,3 +68,4 @@ return(urlParsed);
 const url2 = "http://www.ort.edu.ar:8080/alumnos/index.htm?curso=2022&mes=mayo";
 let parsear = parsearUrl(url2);
 console.log(parsear);
+

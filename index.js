@@ -3,6 +3,8 @@ import { URL } from 'url';
 import {sumar, alCuadrado, calcularAreaCirculo, calcularPerimetroCirculo} from "./modules/matematica.js";
 import {Cane} from "./modules/Alumno.js";
 import fs from 'fs';
+import countryToCurrency from 'country-to-currency';
+
 //EJ 01//
 
 let palabra1 = 'auto';
@@ -47,25 +49,34 @@ fs.copyFile('archivo.txt', 'nuevoArchivo.txt', (err) => {
   }
 });
 
-//EJ05//
+
+//EJ05/6//
 
 
 const parsearUrl = (url) =>
 {
-    url = new URL(url)
-const urlParsed =
-{
+   try {
+    url = new URL(url);
+    return {
     "host": 'https://'+url.hostname,
     "pathname": url.pathname,
     "parametros": Object.fromEntries(url.searchParams)
-};
-
-return(urlParsed);
+   };
+   } catch (error) {
+    console.error(error.message)
+   } 
 }
-
-
 
 const url2 = "http://www.ort.edu.ar:8080/alumnos/index.htm?curso=2022&mes=mayo";
 let parsear = parsearUrl(url2);
+let parsear2 = parsearUrl("uuu");
 console.log(parsear);
 
+//EJ07//
+
+const obtenerMoneda = (pais) =>{
+    return countryToCurrency[pais];
+}
+
+let arg = obtenerMoneda('AR');
+console.log(arg);

@@ -1,5 +1,6 @@
 
 import { URL } from 'url';
+import {sumar, alCuadrado, calcularAreaCirculo, calcularPerimetroCirculo} from "./modules/matematica.js";
 
 let palabra1 = 'auto';
 let palabra2 = 'rueda';
@@ -25,3 +26,7 @@ return(urlParsed);
 const url2 = "http://www.ort.edu.ar:8080/alumnos/index.htm?curso=2022&mes=mayo";
 let parsear = parsearUrl(url2);
 console.log(parsear)
+console.log(`1+2 =  ${sumar(1,2)}, 
+6 * 6 =  ${alCuadrado(6)}, 
+Area del circulo cuya radio es 5:  ${calcularAreaCirculo(5)}, 
+Perímetro del circulo cuya radio es 5: ${calcularPerimetroCirculo(5)}`);

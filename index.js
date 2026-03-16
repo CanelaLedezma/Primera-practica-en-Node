@@ -2,6 +2,7 @@
 import { URL } from 'url';
 import {sumar, alCuadrado, calcularAreaCirculo, calcularPerimetroCirculo} from "./modules/matematica.js";
 import {Cane} from "./modules/Alumno.js";
+import countryToCurrency from 'country-to-currency';
 
 //EJ 01//
 

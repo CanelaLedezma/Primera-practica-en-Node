@@ -17,6 +17,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
-    
+  },
+  "dependencies": {
+    "country-to-currency": "^2.0.2"
   }
 }
